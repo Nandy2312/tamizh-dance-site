@@ -1,14 +1,16 @@
-/* Tamizh · dark premium theme with one accent (jacket red-orange).
+/* Tamizh · charcoal + forest green with one crimson accent.
    Change the colours here and the whole site follows. */
 :root {
-  --bg: #141010;        /* page background */
-  --bg-2: #1d1817;      /* alternate sections, cards */
-  --bg-3: #272020;      /* inputs, raised */
-  --text: #f6ede4;
-  --muted: #b9a89b;
-  --line: #342b28;
-  --accent: #ff4d2e;    /* the one vibrant accent */
-  --accent-ink: #160b08;
+  /* Palette from the reference reel: Charcoal Black, Forest Green, Crimson Red */
+  --bg: #06110c;        /* forest green: page background */
+  --bg-2: #171717;      /* charcoal black: alternate sections, cards */
+  --bg-3: #1d2420;      /* inputs, raised */
+  --text: #eef3ef;
+  --muted: #a7b6ae;
+  --line: #24302a;
+  --accent: #a31c1b;      /* crimson red: buttons, strip, tags */
+  --accent-text: #ef4b45; /* lighter crimson for text on dark (readable contrast) */
+  --accent-ink: #ffffff;  /* text on crimson */
   --font-display: "Shrikhand", "Cooper Black", Georgia, serif;
   --font-body: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --radius: 18px;
@@ -35,7 +37,7 @@ p { margin: 0; }
 .alt { background: var(--bg-2); }
 .section-head { display: grid; gap: .7rem; margin-bottom: 2.5rem; max-width: 640px; }
 .section-head p:not(.eyebrow) { color: var(--muted); }
-.eyebrow { font-size: .85rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.eyebrow { font-size: .85rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text); }
 .center { text-align: center; margin-top: 2rem; }
 
 /* Buttons */
@@ -52,7 +54,7 @@ p { margin: 0; }
 .site-header.scrolled { border-color: var(--line); }
 .header-row { height: var(--header-h); display: flex; align-items: center; gap: 1.25rem; }
 .logo { font-family: var(--font-display); font-size: 1.6rem; text-decoration: none; margin-right: auto; }
-.logo span { color: var(--accent); }
+.logo span { color: var(--accent-text); }
 .nav { display: flex; gap: 1.6rem; font-weight: 600; font-size: .98rem; }
 .nav a { text-decoration: none; color: var(--muted); transition: color .2s; }
 .nav a:hover { color: var(--text); }
@@ -68,11 +70,11 @@ p { margin: 0; }
 .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-block: clamp(2.5rem, 7vw, 5rem); }
 .hero-copy { display: grid; gap: 1.4rem; min-width: 0; }
 .hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 7.2vw, 5rem); }
-.hero h1 em { font-style: normal; color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent-text); }
 .lead { font-size: clamp(1.1rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 38ch; }
 .cta-row { display: flex; flex-wrap: wrap; gap: .8rem; }
 .trust { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; padding: 0; margin: 0; list-style: none; color: var(--muted); font-weight: 600; font-size: .98rem; }
-.trust li::before { content: "✓ "; color: var(--accent); font-weight: 800; }
+.trust li::before { content: "✓ "; color: var(--accent-text); font-weight: 800; }
 .hero-media { position: relative; margin: 0; justify-self: center; width: 100%; max-width: 440px; }
 .hero-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 15%; border-radius: 28px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.8); }
 .hero-media::after { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 2px solid var(--accent); border-radius: 28px; z-index: -1; }
@@ -100,7 +102,7 @@ p { margin: 0; }
 .achievements b { color: var(--text); }
 .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: .5rem; }
 .stats div { border-top: 2px solid var(--line); padding-top: .8rem; }
-.stats strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 5vw, 2.8rem); color: var(--accent); line-height: 1; }
+.stats strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 5vw, 2.8rem); color: var(--accent-text); line-height: 1; }
 .stats span { color: var(--muted); font-size: .92rem; }
 
 /* Cards */
@@ -108,7 +110,7 @@ p { margin: 0; }
 .card { position: relative; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.7rem; display: grid; gap: .8rem; align-content: start; transition: transform .25s ease, border-color .25s ease; }
 .card:hover { transform: translateY(-4px); border-color: var(--accent); }
 .card p { color: var(--muted); font-size: 1rem; }
-.card-link { color: var(--accent); font-weight: 800; text-decoration: none; margin-top: .2rem; }
+.card-link { color: var(--accent-text); font-weight: 800; text-decoration: none; margin-top: .2rem; }
 .card-link:hover { text-decoration: underline; }
 .card-tag { justify-self: start; background: var(--accent); color: var(--accent-ink); font-size: .75rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: .25rem .65rem; border-radius: 999px; }
 
@@ -147,15 +149,15 @@ p { margin: 0; }
 .plan-featured { border: 2px solid var(--accent); transform: translateY(-8px); box-shadow: 0 30px 60px -30px color-mix(in srgb, var(--accent) 50%, transparent); }
 .price { font-family: var(--font-display); font-size: 2.4rem; line-height: 1; }
 .price small { font-family: var(--font-body); font-size: .95rem; color: var(--muted); margin-left: .3rem; }
-.price-note { color: var(--accent); font-weight: 700; font-size: .95rem; margin-top: -.4rem; }
+.price-note { color: var(--accent-text); font-weight: 700; font-size: .95rem; margin-top: -.4rem; }
 .plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; color: var(--muted); font-size: 1rem; }
-.plan li::before { content: "✓ "; color: var(--accent); font-weight: 800; }
+.plan li::before { content: "✓ "; color: var(--accent-text); font-weight: 800; }
 
 /* Testimonials */
 .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
 .quote { margin: 0; padding: 1.8rem; border-radius: var(--radius); background: var(--bg); border: 1px solid var(--line); display: grid; gap: 1rem; align-content: space-between; position: relative; }
 .quote blockquote { margin: 0; font-size: 1.12rem; line-height: 1.5; }
-.quote blockquote::before { content: "“"; display: block; font-family: var(--font-display); font-size: 3rem; line-height: .6; color: var(--accent); margin-bottom: .4rem; }
+.quote blockquote::before { content: "“"; display: block; font-family: var(--font-display); font-size: 3rem; line-height: .6; color: var(--accent-text); margin-bottom: .4rem; }
 .quote figcaption { color: var(--muted); font-size: .95rem; font-weight: 600; }
 .sample { position: absolute; top: 1rem; right: 1rem; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--muted); padding: .15rem .5rem; border-radius: 6px; }
 
@@ -165,7 +167,7 @@ p { margin: 0; }
 .faq details[open] { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
 .faq summary { cursor: pointer; list-style: none; padding: 1.1rem 1.3rem; font-weight: 800; display: flex; justify-content: space-between; gap: 1rem; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; color: var(--accent); font-size: 1.5rem; line-height: 1; transition: transform .2s; }
+.faq summary::after { content: "+"; color: var(--accent-text); font-size: 1.5rem; line-height: 1; transition: transform .2s; }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq details p { padding: 0 1.3rem 1.2rem; color: var(--muted); }
 
@@ -190,7 +192,7 @@ input[aria-invalid="true"] { border-color: var(--accent); }
 .footer-row p { color: var(--muted); font-size: .95rem; }
 .socials { display: flex; gap: 1.3rem; font-weight: 700; }
 .socials a { text-decoration: none; }
-.socials a:hover { color: var(--accent); }
+.socials a:hover { color: var(--accent-text); }
 .copy { width: 100%; }
 
 /* Floating WhatsApp (mobile) */
